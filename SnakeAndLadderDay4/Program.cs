@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UC4
+namespace UC5
+
 {
     public class Dice
     {
@@ -46,28 +47,26 @@ namespace UC4
                     user1 = 0;
                     Console.WriteLine("User1 starts from position 0");
                 }
+                while (this.user1 > 100)
+                {
+                    Console.WriteLine($"Greater than 100 : {this.countStop1[this.countStop1.Count - 1]}");
+                    this.user1 = this.user1 - this.countStop1[this.countStop1.Count - 1];
+                    Console.WriteLine($"After Greater than 100 Position Will : {this.user1}");
+                    break;
+                }
 
                 this.count++;
 
 
             }
         }
-        void show()
-        {
-            Console.WriteLine($"Dies Roll Out {this.countStop1.Count} Times");
-            Console.WriteLine($"Winning Position : {this.user1}");
-            foreach (int i in this.countStop1)
-            {
-                Console.Write($"{i},");
-            }
-        }
+
         class Program
         {
             static void Main(string[] args)
             {
                 Dice obj = new Dice();
                 obj.FirstDice();
-                obj.show();
             }
         }
     }
