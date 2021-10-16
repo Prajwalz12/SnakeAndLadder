@@ -1,13 +1,14 @@
 ﻿using System;
 
-namespace UC1
+namespace UC2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int user1 = 0;
-            Console.WriteLine("User1 at start positon 0");
+            Console.WriteLine("User1 start at positon 0");
+            Random random = new Random();
+            Console.WriteLine("Dice no is : " + random.Next(1, 7));
         }
     }
 }
